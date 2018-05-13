@@ -14,7 +14,7 @@ You will need to have docker installed on your local machine.
 
 Then you will need to set up project specific configuration 
 
-##Set Maintainer Information
+#### Set Maintainer Information
 
 Site email configuration
 
@@ -30,7 +30,7 @@ Site email configuration
 ```
 
 
-##Database configuration
+#### Database configuration
 
 You will need to set db name, usesrname passwords etc...
 
@@ -77,7 +77,7 @@ Set your root db password in docker-compose.yaml
 
 
 
-##Set the base URLs
+#### Set the base URLs
 
 conman.json
 
@@ -100,7 +100,7 @@ Set server_name and root ui directory in....
 /docker/php-web/conf/nginx/sites-enabled/scaffold-api.conf
 
 
-##Change Hosts file
+#### Change Hosts file
 
 ```
 127.0.0.1   db api.yoururl.dev yoururl.dev
