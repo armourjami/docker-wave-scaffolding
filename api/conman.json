@@ -1,0 +1,120 @@
+{
+  "app": {
+
+    "customer_auth": {
+        "jwt": {
+          "algorithm": "HS256",
+          "key": "bnj[w9KG}P2W?7dwJXRE#aWB"
+        },
+      "access_token_validity": "+2 hours",
+      "refresh_token_validity": "+24 hours",
+      "password_hash_cost": 10
+    },
+    "sentry": {
+      "enabled": false,
+      "dsn": "https:\/\/1b23a343d2ba47bf8a4a782bb778a8e4:2b7fc52b8a1e4cf495c1edb8150f7afa@app.getsentry.com\/74413"
+    }
+  },
+  "db": {
+    "databases": {
+      "Platform": {
+        "production": {
+          "driver": "MySQL",
+          "host": "db",
+          "port": "3306",
+          "username": "root",
+          "password": "secret",
+          "database": "site",
+          "charset": "utf8mb4"
+        }
+      }
+    }
+  },
+  "deploy": {
+    "assets": "",
+    "mode": "development",
+    "baseurl": "http:\/\/scaffold.dev/api",
+    "profiles": {
+      "default": {
+        "baseurl": "http:\/\/scaffold.dev/api"
+      }
+    },
+    "uploads": {
+      "path_type": "relative",
+      "storage_path": "uploads",
+      "base_url": "\/uploads"
+    },
+    "auth": {
+      "persist_type": "cookie",
+      "use_cookies": true,
+      "cookie": {
+        "name": "scaffold",
+        "domain": "scaffold.dev",
+        "path": "\/",
+        "expires": "+1 day",
+        "secure": false,
+        "httponly": true
+      }
+    },
+    "ssl": false,
+    "email": {
+      "transport": "SENDMAIL",
+      "fromname": "Scaffolding App",
+      "fromaddr": "feedback@scaffold.co.nz",
+      "default_mimetype": "text\/html"
+    }
+  },
+  "wave": {
+    "controller": {
+      "default_method": "execute"
+    },
+    "response": {
+      "default_format": "json"
+    },
+    "logger": {
+      "file": {
+        "level": 100,
+        "file": "error.log"
+      },
+      "cli": {
+        "level": 100
+      }
+    },
+    "router": {
+      "cache_file": "routes",
+      "auth": {
+        "enabled": true,
+        "controller": "AuthController"
+      },
+      "base": {
+        "methods": [
+          "json"
+        ]
+      }
+    },
+    "model": {
+      "base_namespace": "Models"
+    },
+    "path": {
+      "cache": "cache\/",
+      "config": "conf\/",
+      "libraries": "lib\/",
+      "logs": "logs\/",
+      "bin": "bin\/",
+      "migrations": "bin\/migrate\/",
+      "controllers": "app\/Controllers\/",
+      "events": "app\/Events\/",
+      "models": "app\/Models\/",
+      "schemas": "app\/schemas\/",
+      "views": "app\/views\/",
+      "templates": "app\/templates\/"
+    },
+    "schemas": {
+      "file_format": "%s.php"
+    },
+    "view": {
+      "cache": "cache\/views\/",
+      "extension": ".phtml"
+    }
+  }
+}

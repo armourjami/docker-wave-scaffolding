@@ -1,0 +1,44 @@
+version: '3'
+services: 
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/src
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    links:
+      - php
+
+  php:
+    image: php:7-fpm
+    links:
+          - mysql
+    volumes:
+      - ./src:/src
+    run:
+      - 
+
+  mysql:
+      image: drakedroid/mysql-with-data
+      ports: 
+  #exposes port 3307, sometimes there will be a conflict with local mysql running on the same port    
+          - "3306:3306"
+      expose:
+          - 3306    
+      restart: always    
+      volumes_from:
+          - data
+      environment:
+          MYSQL_ROOT_PASSWORD: secret
+          MYSQL_DATABASE: site
+          MYSQL_USER: site
+          MYSQL_PASSWORD: site
+
+  data:
+      image: mysql:latest
+      volumes:
+          - /var/lib/mysql
+      command: "true"
+
+

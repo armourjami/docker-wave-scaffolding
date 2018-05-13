@@ -1,0 +1,23 @@
+{
+
+	"authors": [
+        {
+            "name": "Jamie Armour",
+            "email": "jamie@hell.co.nz"
+        }
+    ],
+
+    "require": {
+        "wave-framework/wave": "3.7.7",
+        "firebase/php-jwt": "^3.0",
+        "robmorgan/phinx": "^0.8.0",
+        "twig/twig": "1.18.0",
+        "sentry/sentry": "1.1.0",
+        "swiftmailer/swiftmailer": "~5.4"
+    },
+
+    "autoload": {
+         "psr-0": { "": "app/" }
+    }
+
+}
